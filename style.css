@@ -1,0 +1,222 @@
+:root {
+    --primary-blue: #3b82f6;
+    --success-green: #10b981;
+    --danger-red: #ef4444;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --bg-page: #f1f5f9;
+}
+
+* { 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+}
+
+body {
+    background-color: var(--bg-page);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    width: 95%;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+}
+
+.input-panel { 
+    flex: 1.3; 
+}
+
+.result-panel { 
+    flex: 1; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.card-header h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.card-header p {
+    margin: 0 0 24px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.input-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 16px; 
+    margin-bottom: 20px; 
+}
+
+label { 
+    display: flex; 
+    justify-content: space-between; 
+    font-weight: 600; 
+    font-size: 0.82rem; 
+    color: #334155; 
+    margin-bottom: 8px; 
+}
+
+label span { color: var(--primary-blue); }
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.2s;
+}
+
+input:focus { outline: none; border-color: var(--primary-blue); }
+input.invalid { border-color: var(--danger-red); background-color: #fef2f2; }
+
+#resetBtn {
+    width: 100%;
+    background: #f1f5f9;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+#resetBtn:hover {
+    background: #e2e8f0;
+}
+
+.status-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.result-panel h1 {
+    font-size: 2.3rem;
+    margin: 0;
+    color: var(--text-dark);
+    font-weight: 800;
+}
+
+.result-panel .label {
+    margin: 6px 0 0 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.divider { 
+    width: 100%; 
+    height: 1px; 
+    background: #f1f5f9; 
+    margin: 20px 0; 
+}
+
+.requirement-box { 
+    text-align: left; 
+    width: 100%; 
+    margin-bottom: 20px; 
+}
+
+.req-item { 
+    font-size: 0.85rem; 
+    color: #94a3b8; 
+    margin-bottom: 8px; 
+    display: flex; 
+    align-items: center; 
+}
+
+.dot { 
+    height: 8px; 
+    width: 8px; 
+    border-radius: 50%; 
+    background: #cbd5e1; 
+    margin-right: 10px; 
+}
+
+.final-exam-calc {
+    background: #f8fafc;
+    padding: 18px 20px;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.final-exam-calc p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.final-exam-calc h2 { 
+    margin: 10px 0 6px 0; 
+    color: var(--primary-blue); 
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.final-exam-calc small {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.pass-theme { 
+    border-color: var(--success-green) !important; 
+    background: white !important; 
+}
+
+.fail-theme { 
+    border-color: var(--danger-red) !important; 
+    background: #fff5f5 !important; 
+}
+
+.met { 
+    color: var(--success-green) !important; 
+    font-weight: 700 !important; 
+}
+
+.met .dot { 
+    background: var(--success-green) !important; 
+}
+
+.not-met { 
+    color: #94a3b8; 
+}
+
+@media (max-width: 768px) {
+    .main-container { flex-direction: column; }
+    .input-panel, .result-panel { width: 100%; }
+}

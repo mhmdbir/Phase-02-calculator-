@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2 Scores Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Input Section -->
+        <div class="card input-panel">
+            <div class="card-header">
+                <h2>Phase 2 Scores</h2>
+                <p>Enter your marks for each committee (0-100)</p>
+            </div>
+            
+            <div class="input-grid">
+                <div class="input-field">
+                    <label>Committee 1 <span>20%</span></label>
+                    <input type="number" class="score-input" data-weight="0.20" placeholder="0" min="0" max="100">
+                </div>
+                <div class="input-field">
+                    <label>Committee 2 <span>11%</span></label>
+                    <input type="number" class="score-input" data-weight="0.11" placeholder="0" min="0" max="100">
+                </div>
+                <div class="input-field">
+                    <label>Committee 3 <span>17%</span></label>
+                    <input type="number" class="score-input" data-weight="0.17" placeholder="0" min="0" max="100">
+                </div>
+                <div class="input-field">
+                    <label>Committee 4 <span>20%</span></label>
+                    <input type="number" class="score-input" data-weight="0.20" placeholder="0" min="0" max="100">
+                </div>
+                <div class="input-field">
+                    <label>Committee 5 <span>20%</span></label>
+                    <input type="number" class="score-input" data-weight="0.20" placeholder="0" min="0" max="100">
+                </div>
+                <div class="input-field">
+                    <label>Committee 6 <span>12%</span></label>
+                    <input type="number" class="score-input" data-weight="0.12" placeholder="0" min="0" max="100">
+                </div>
+            </div>
+            <button id="resetBtn">Reset All Data</button>
+        </div>
+
+        <!-- Result Section -->
+        <div class="card result-panel" id="resultContainer">
+            <div class="status-icon" id="statusIcon">?</div>
+            <h1 id="totalPercent">0.00%</h1>
+            <p class="label">Weighted Average</p>
+            
+            <div class="divider"></div>
+            
+            <div class="requirement-box">
+                <div class="req-item" id="req75">
+                    <span class="dot"></span> Phase 2 ≥ 75%
+                </div>
+                <div class="req-item" id="req50">
+                    <span class="dot"></span> All Committees ≥ 50
+                </div>
+            </div>
+
+            <div class="final-exam-calc">
+                <p>Required on Final Exam to Pass (60% Total):</p>
+                <h2 id="finalScoreNeeded">--</h2>
+                <small id="subNote">*Final exam minimum 50 score applied</small>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
